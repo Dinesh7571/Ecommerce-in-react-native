@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useForm, Controller } from 'react-hook-form';
 import { z } from 'zod';
@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { login } from '../services/userServices';
 import UserContext from '../context/UserContext';
 import { Tabs } from '../../Navigator';
-
+import icon from '../assets/icon.jpg'
 const schema = z.object({
   email: z.string().email({ message: "Enter valid email" }),
   password: z.string().min(8, { message: "Password must be at least 8 characters" })
@@ -24,15 +24,7 @@ const LoginScreen = () => {
     resolver: zodResolver(schema)
   });
 
-  // useEffect(() => {
-  //   setUserLoading(true)
-  //   if (user !== null) {
-  //     console.log("user in login:", user);
-  //     navigation.navigate("TABS");
-  //   }
-    
-  //   setUserLoading(false);
-  // }, [user, navigation]);
+
 
   const onSubmit = async (formData) => {
     setLoading(true);
@@ -57,7 +49,8 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeText}>Log In</Text>
+    <Image source={icon} style={{height:200, width:200}}/>
+      <Text style={styles.welcomeText}>Welcome Again </Text>
 
       <Controller
         control={control}
@@ -120,7 +113,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#ecfcfb',
     padding: 20,
   },
   welcomeText: {
