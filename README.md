@@ -1,10 +1,7 @@
 
-![image 1](showcase/1.jpg)
-![image 1](showcase/2.jpg)
-![image 1](showcase/3.jpg)
-![image 1](showcase/4.jpg)
-![image 1](showcase/5.jpg)
-![image 1](showcase/6.jpg)
+![image 1](showcase/2.jpeg)
+![image 1](showcase/1.jpeg)
+
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
